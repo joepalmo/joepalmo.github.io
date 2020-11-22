@@ -1,8 +1,20 @@
-#navigation {
+body {
 	background-image: url('../img/deepfield.jpg'); 
 }
 
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+
 h1 {
+	float: left;
+	padding: 10px 0;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+h4 {
 	float: left;
 	padding: 10px 0;
 	text-decoration: none;
