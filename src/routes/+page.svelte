@@ -18,6 +18,7 @@
     <div class="social-links">
         <a href="https://github.com/joepalmo" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
         <a href="https://linkedin.com/in/joe-palmo-7039b5178" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://scholar.google.com/citations?user=SiPb7lQAAAAJ" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
     </div>
 </div>
 
