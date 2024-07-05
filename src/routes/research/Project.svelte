@@ -2,7 +2,7 @@
     export let title = "Untitled Project";
     export let background = "No background provided.";
     export let description = "No description provided.";
-    export let link = "#";
+    export let links = {}; // modify the prop to accept an array of links
     export let togglemessage = "Click to hide details";
     export let imagedata = "/img/default.jpg"; // provide a default image path
 
@@ -27,7 +27,16 @@
             <p id="description"><b>Description: </b> <br> <span>{@html description}</span></p>
         </div>
     {/if}
-    <a href={link}>Link</a>
+    {#if Object.keys(links).length > 0}
+    <div class="links">
+        {#each Object.entries(links) as [name, link], index}
+            <span><a href={link}>{name}</a></span>
+            {#if index < Object.keys(links).length - 1}
+                <span class="separator">   |   </span>
+            {/if}
+        {/each}
+    </div>
+    {/if}
     <img src={base + imagedata} alt="Image for {title}" />
     <hr />
 </div>
@@ -73,6 +82,10 @@
         line-height: 1.5;
         color: #666;
         margin: 8px 0;
+    }
+
+    #research-card h2 {
+        line-height: 1.4;
     }
 
     #research-card a {
