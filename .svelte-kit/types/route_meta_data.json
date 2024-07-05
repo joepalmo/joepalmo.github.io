@@ -1,0 +1,21 @@
+{
+	"/": [
+		"src/routes/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/project-grid": [
+		"src/routes/+layout.js"
+	],
+	"/projects/noaa-hms-viewer": [
+		"src/routes/+layout.js"
+	],
+	"/projects/py-tofspec": [
+		"src/routes/+layout.js"
+	],
+	"/projects/sensing-the-dynamic-universe": [
+		"src/routes/+layout.js"
+	],
+	"/research": [
+		"src/routes/+layout.js"
+	]
+}
