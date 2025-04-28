@@ -1,3 +1,3 @@
 Simple personal website!
 
-Access [here](https://www.joepalmo.com)
+[![Website](https://img.shields.io/badge/website-live-green?style=for-the-badge&logo=github)](https://joepalmo.com)
