@@ -29,10 +29,13 @@ jobs:
       - name: Build the site
         run: npm run build
 
+      - name: List build output
+        run: ls -Rla ./build
+
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build   # <- confirm this matches the build folder
+          path: build
 
   deploy:
     needs: build
