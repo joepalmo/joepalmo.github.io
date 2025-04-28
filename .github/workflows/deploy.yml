@@ -1,4 +1,4 @@
-name: Build and Deploy SvelteKit to GitHub Pages
+name: Build and Deploy
 
 on:
   push:
@@ -10,18 +10,16 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
 
       - name: Install dependencies
         run: npm install
@@ -29,13 +27,11 @@ jobs:
       - name: Build the site
         run: npm run build
 
-      - name: List build output
-        run: ls -Rla ./build
-
       - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v2
         with:
           path: build
+          name: github-pages   # <<< THIS IS IMPORTANT!!
 
   deploy:
     needs: build
