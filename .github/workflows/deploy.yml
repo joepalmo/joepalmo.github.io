@@ -5,6 +5,9 @@ on:
     branches:
       - master
 
+env:
+  ACTIONS_STEP_DEBUG: true
+
 permissions:
   contents: read
   pages: write
@@ -38,8 +41,12 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages
           path: build
+
+      - name: List artifacts
+        run: |
+          echo "Listing uploaded artifacts..."
+          ls -la ${{ github.workspace }}
 
   deploy:
     needs: build
