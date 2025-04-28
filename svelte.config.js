@@ -8,9 +8,12 @@ const config = {
       assets: 'build',
       fallback: null
     }),
+    // paths: {
+    //   base: process.env.NODE_ENV === 'production' ? '/portfolio' : ''
+    // },
     paths: {
-      base: process.env.NODE_ENV === 'production' ? '/portfolio' : ''
-    },
+      base: ''
+    },    
     prerender: {
       handleHttpError: ({ status, path, referrer, referenceType }) => {
         if (status === 404) {
