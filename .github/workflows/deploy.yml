@@ -1,4 +1,4 @@
-name: Deploy site to GitHub Pages
+name: Build and Deploy SvelteKit to GitHub Pages
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -33,7 +33,7 @@ jobs:
         run: ls -Rla ./build
 
       - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: build
 
