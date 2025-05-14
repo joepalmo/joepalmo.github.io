@@ -21,11 +21,13 @@
         <h2 id="title">{title}</h2>
         <p id="toggle-switch" on:click={toggleDetails}>{togglemessage}</p>
     </div>
+    <hr /> 
     {#if showDetails}
         <div id="details">
-            <p id="background"><b>Background: </b> <br> <span>{@html background}</span></p>
-            <p id="description"><b>Description: </b> <br> <span>{@html description}</span></p>
+            <!-- <p id="background"><b>Background: </b> <br> <span>{@html background}</span></p> -->
+            <p id="description"><b></b> <br> <span>{@html description}</span></p>
         </div>
+        <hr /> 
     {/if}
     {#if Object.keys(links).length > 0}
     <div class="links">
@@ -36,6 +38,7 @@
             {/if}
         {/each}
     </div>
+    <hr /> 
     {/if}
     <img src={base + imagedata} alt="Image for {title}" />
     <hr />
