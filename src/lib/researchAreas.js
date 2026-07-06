@@ -17,7 +17,7 @@ export const researchAreas = [
 		tagline: 'Estimating emissions from point sources',
 		image: '/img/rockets_fig.png',
 		publicationIds: ['rocket-nox-grl'],
-		abstract: ['Geostationary satellites observe the same region throughout the day, making them well suited for capturing short-lived emission events that polar-orbiting instruments can miss. Rocket launches are one example: they inject nitrogen oxides (NOx) into the upper troposphere and lower stratosphere on timescales of hours. I use geostationary satellite observations to detect and quantify these emissions, and derive a robust relationship between launch mass and NOx emissions.']
+		abstract: ['Geostationary satellites observe the same region throughout the day, making them well suited for capturing short-lived emission events that polar-orbiting instruments can miss. Rocket launches are one example: they inject nitrogen oxides (NOx) into the upper troposphere and lower stratosphere on timescales of minutes. I use geostationary satellite observations to detect and quantify these emissions, and derive a robust relationship between launch mass and NOx emissions.']
 	},
 	{
 		slug: 'wildfire-ozone',
