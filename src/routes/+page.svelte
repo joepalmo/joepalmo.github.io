@@ -1,8 +1,6 @@
 <script>
-    import index from './index.svelte';
-    import {onMount} from 'svelte'
-    import { base } from '$app/paths';
     import Clouds from './Clouds.svelte';
+    import { SCHOLAR_URL } from '$lib/links.js';
 </script>
 
 
@@ -10,15 +8,16 @@
 <div id="body">
     <script src="https://cdn.jsdelivr.net/npm/p5@1.8.0/lib/p5.js"></script>
     <div class="about-blurb">
-        Hello! I'm a PhD candidate studying atmospheric chemistry and climate science at MIT. I'm interested in modeling, data science / visualization, scientific computing, and science communication. <br> <br>
-        I've previously worked as a data scientist in the climate-tech startup space, a research fellow at the Harvard-Smithsonian Center for Astrophysics, and an intern at NASA. Before that, I studied physics and astronomy at Amherst College. <br> <br>
+        Hello! I'm a PhD candidate in atmospheric chemistry and climate science at MIT. <br> <br>
+        In my research, I use satellite remote sensing and chemical transport modeling to study atmospheric composition, with a focus on wildfire smoke, tropospheric ozone, and emissions from transient sources. I am currently a NASA FINESST Fellow. <br> <br>
+        Previously, I worked as a data scientist at a climate-tech startup and as a research fellow at the Harvard-Smithsonian Center for Astrophysics. I studied physics and astronomy at Amherst College. <br> <br>
         My email is <a id="email-link" href = "mailto: joepalmo7@gmail.com">joepalmo7@gmail.com</a>. I use he/him pronouns. 
     </div>
     <br>
     <div class="social-links">
         <a href="https://github.com/joepalmo" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
         <a href="https://linkedin.com/in/joe-palmo-7039b5178" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://scholar.google.com/citations?user=SiPb7lQAAAAJ" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href={SCHOLAR_URL} target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
     </div>
 </div>
 

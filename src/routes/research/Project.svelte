@@ -1,134 +1,93 @@
 <script>
-    export let title = "Untitled Project";
-    export let background = "No background provided.";
-    export let description = "No description provided.";
-    export let links = {}; // modify the prop to accept an array of links
-    export let togglemessage = "Click to hide details";
-    export let imagedata = "/img/default.jpg"; // provide a default image path
+	export let title = 'Untitled';
+	export let tagline = '';
+	export let href = '#';
+	export let imagedata = '/img/default.jpg';
 
-    import { base } from '$app/paths';
+	import { base } from '$app/paths';
 
-    let showDetails = true;
-
-    function toggleDetails() {
-        showDetails = !showDetails;
-        togglemessage = showDetails ? "Click to hide details" : "Click to show details";
-    }
+	$: imageSrc = imagedata.startsWith('http') ? imagedata : base + imagedata;
 </script>
 
-<div id="research-card">
-    <div class="header">
-        <h2 id="title">{title}</h2>
-        <p id="toggle-switch" on:click={toggleDetails}>{togglemessage}</p>
-    </div>
-    <hr /> 
-    {#if showDetails}
-        <div id="details">
-            <!-- <p id="background"><b>Background: </b> <br> <span>{@html background}</span></p> -->
-            <p id="description"><b></b> <br> <span>{@html description}</span></p>
-        </div>
-        <hr /> 
-    {/if}
-    {#if Object.keys(links).length > 0}
-    <div class="links">
-        {#each Object.entries(links) as [name, link], index}
-            <span><a href={link}>{name}</a></span>
-            {#if index < Object.keys(links).length - 1}
-                <span class="separator">   |   </span>
-            {/if}
-        {/each}
-    </div>
-    <hr /> 
-    {/if}
-    <img src={base + imagedata} alt="Image for {title}" />
-    <hr />
-</div>
+<a id="research-card" href={href}>
+	<div class="image-wrap">
+		<img src={imageSrc} alt="" />
+	</div>
+	<div class="content">
+		<h2>{title}</h2>
+		{#if tagline}
+			<p class="tagline">{tagline}</p>
+		{/if}
+	</div>
+</a>
 
 <style>
-    #research-card {
-        border: 1px solid #ddd;
-        padding: 16px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        margin-bottom: 16px;
-    }
+	#research-card {
+		display: flex;
+		align-items: flex-start;
+		gap: 1.25rem;
+		margin-bottom: 2rem;
+		text-decoration: none;
+		color: inherit;
+		border-radius: 4px;
+		transition: background-color 0.2s ease;
+	}
 
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+	#research-card:hover {
+		background-color: rgba(163, 201, 80, 0.06);
+	}
 
-    #research-card h2 {
-        font-size: 1.5em;
-        color: #333;
-    }
+	.image-wrap {
+		flex-shrink: 0;
+		width: 120px;
+		height: 120px;
+		overflow: hidden;
+		border-radius: 4px;
+		line-height: 0;
+	}
 
-    #toggle-switch {
-        font-size: 1em;
-        color: #007bff;
-        cursor: pointer;
-        margin: 8px 0;
-    }
+	#research-card img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		transition: transform 0.4s ease;
+	}
 
-    #toggle-switch:hover {
-        text-decoration: underline;
-        text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    }
+	#research-card:hover img {
+		transform: scale(1.04);
+	}
 
-    #details {
-        transition: all 0.3s ease-in-out;
-    }
+	.content {
+		flex: 1;
+		min-width: 0;
+		padding-top: 0.1rem;
+	}
 
-    #research-card p {
-        font-size: 1em;
-        line-height: 1.5;
-        color: #666;
-        margin: 8px 0;
-    }
+	#research-card h2 {
+		font-family: GTAmerica-Bold, GTAmerica, sans-serif;
+		font-size: 1.15em;
+		font-weight: normal;
+		line-height: 1.35;
+		color: var(--black);
+		margin: 0;
+	}
 
-    #research-card h2 {
-        line-height: 1.4;
-    }
+	.tagline {
+		font-size: 0.92em;
+		line-height: 1.45;
+		color: var(--medium-gray);
+		margin: 0.35rem 0 0;
+	}
 
-    #research-card a {
-        display: inline-block;
-        margin-top: 8px;
-        color: #1e90ff;
-        text-decoration: none;
-    }
+	@media (max-width: 600px) {
+		.image-wrap {
+			width: 90px;
+			height: 90px;
+		}
 
-    #research-card a:hover {
-        text-decoration: underline;
-    }
-
-    #research-card img {
-        width: 100%;
-        height: auto;
-        margin-top: 16px;
-        border-radius: 8px;
-    }
-
-    #research-card hr {
-        margin-top: 16px;
-        border: none;
-        border-top: 1px solid #ddd;
-    }
-
-    #research-card sub, #research-card sup {
-        font-size: 0.8em;
-        line-height: 0;
-        vertical-align: baseline;
-        position: relative;
-    }
-
-    #research-card sub {
-        bottom: -0.2em;
-    }
-
-    #research-card sup {
-        top: -0.2em;
-    }
+		#research-card {
+			gap: 1rem;
+		}
+	}
 </style>
-
-

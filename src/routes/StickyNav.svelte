@@ -6,7 +6,8 @@
     <nav>
         <a class="nav-item" id="about-nav" href="{base}/">ABOUT</a>
         <a class="nav-item" id="research-nav" href="{base}/research">RESEARCH</a>
-        <a class="nav-item" id="research-nav" href="{base}/project-grid">PROJECTS</a>
+        <a class="nav-item" id="publications-nav" href="{base}/publications">PUBLICATIONS</a>
+        <a class="nav-item" id="projects-nav" href="{base}/project-grid">OTHER</a>
         <a class="nav-item" id="cv-nav" href="{ base }/JoePalmo.CV.2025.pdf" target="_blank">CV</a>
     </nav>
 </div>

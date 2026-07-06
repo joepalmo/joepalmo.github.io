@@ -2,10 +2,24 @@
     import index from './index.svelte';
     import { base } from '$app/paths';
     import StickyNav from './StickyNav.svelte';
+    import { onMount } from 'svelte';
+
+    let scrolled = false;
+
+    onMount(() => {
+        const onScroll = () => {
+            scrolled = window.scrollY > 20;
+        };
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+
+        return () => window.removeEventListener('scroll', onScroll);
+    });
 </script>
 
 
-<div id="nav">
+<div id="nav" class:scrolled={scrolled}>
     <StickyNav/>
     <div class="nav" id="name">
     <a href="{base}/"><div>JOE PALMO</div></a>
@@ -27,14 +41,26 @@ text-decoration: none;
     position:fixed;
     width: 100%;
     height: 20vh;
-    position:fixed;
+    z-index: 10;
     background-color: white;
+    pointer-events: none;
     --mask: linear-gradient(to bottom, 
       rgba(0,0,0, 1) 0,   rgba(0,0,0, 1) 60%, 
       rgba(0,0,0, 0) 95%, rgba(0,0,0, 0) 0
   ) 100% 50% / 100% 100% repeat-x;
   -webkit-mask: var(--mask); 
   mask: var(--mask);
+  transition: -webkit-mask 0.2s ease, mask 0.2s ease;
+}
+
+#nav :global(a),
+#nav :global(nav) {
+    pointer-events: auto;
+}
+
+#nav.scrolled {
+    -webkit-mask: none;
+    mask: none;
 }
 
 .nav {
