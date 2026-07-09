@@ -13,7 +13,7 @@
         title: 'NOAA Hazard Mapping System Smoke Visualization Tool',
         logo: '/img/noaa_hms.png',
         background: 'Tool for visualizing smoke plumes and fire hotspots over the U.S. using NOAA HMS satellite data.',
-        links: {'App': 'https://hms-smoke-viewer-z47jd6co7q-ue.a.run.app/', 'Github': 'https://github.com/joepalmo/hms-smoke-viewer','Observable (prototype)': 'https://observablehq.com/d/601a7b6ad3644748'},
+        links: {'App': 'https://smokeviewer.earth', 'Github': 'https://github.com/joepalmo/hms-smoke-viewer','Observable (prototype)': 'https://observablehq.com/d/601a7b6ad3644748'},
         },
         // Add more projects as needed
     ];
