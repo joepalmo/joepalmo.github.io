@@ -11,7 +11,7 @@
         Hello! I'm a PhD candidate in atmospheric chemistry and climate science at MIT. <br> <br>
         In my research, I use satellite remote sensing and chemical transport modeling to study atmospheric composition, with a focus on wildfire smoke, tropospheric ozone, and emissions from transient sources. I am currently a NASA FINESST Fellow. <br> <br>
         Previously, I worked as a data scientist at a climate-tech startup and as a research fellow at the Harvard-Smithsonian Center for Astrophysics. I studied physics and astronomy at Amherst College. <br> <br>
-        My email is <a id="email-link" href = "mailto: joepalmo7@gmail.com">joepalmo7@gmail.com</a>. I use he/him pronouns. 
+        My email is <a id="email-link" href="mailto:joepalmo7@gmail.com">joepalmo7 [at] gmail [dot] com</a>. I use he/him pronouns. 
     </div>
     <br>
     <div class="social-links">
