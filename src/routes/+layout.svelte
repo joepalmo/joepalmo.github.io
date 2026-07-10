@@ -83,6 +83,21 @@ align-items: center;
     margin-left: .5vw;
  }
 
+@media (max-width: 800px) {
+    .nav {
+        left: 0;
+        right: 0;
+        transform: none;
+        width: 100%;
+        padding: 0 12px;
+        box-sizing: border-box;
+    }
+
+    #name {
+        font-size: 1.25em;
+    }
+}
+
 :global(html) {
     font-family: "GTAmerica";
     background-color: white;

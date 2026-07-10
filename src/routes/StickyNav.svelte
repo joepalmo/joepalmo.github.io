@@ -20,14 +20,6 @@
         text-shadow: 0 0 5px var(--light-green);
     }
 
-    @media (max-width: 800px) {
-        :global(.current-section-mobile) {
-        display:block !important;
-        color: var(--black) !important;
-        font-family: GTAmerica-Bold;
-        text-shadow: 0 0 5px var(--light-green);
-    }
-    }
     a {
         text-decoration: none !important;
         color: var(--black);
@@ -42,17 +34,48 @@
         transform: translate(-50%, 0);
     }
 
-    @media (max-width: 800px) {
-        .nav-item {
-            display: inline-block;
-            font-size: 0.8em;
-        }
-    }
     .nav-item {
         padding-left: 1vw;
         padding-right: 1vw;
         color: var(--medium-gray);
         cursor: pointer;
+    }
+
+    @media (max-width: 800px) {
+        .sticky-nav {
+            font-size: clamp(0.55rem, 2.8vw, 0.85rem);
+            left: 0;
+            right: 0;
+            transform: none;
+            width: 100%;
+            max-width: 100%;
+            padding: 0;
+            box-sizing: border-box;
+            justify-content: center;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            white-space: nowrap;
+            max-width: 100%;
+            padding: 0 8px;
+            box-sizing: border-box;
+        }
+
+        .nav-item {
+            padding-left: 0.35vw;
+            padding-right: 0.35vw;
+            flex-shrink: 0;
+        }
+
+        :global(.current-section-mobile) {
+            color: var(--black) !important;
+            font-family: GTAmerica-Bold;
+            text-shadow: 0 0 5px var(--light-green);
+        }
     }
     .nav-item:hover {
             color: var(--black) !important;
